@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, send_file
+from flask import Flask, render_template, request, redirect, url_for, send_file, send_from_directory
 from werkzeug.utils import secure_filename
 from logic import find_text
 from docx import Document
@@ -9,6 +9,9 @@ app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
+
+# Create upload directory if it doesn't exist
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 
 def allowed_file(filename):

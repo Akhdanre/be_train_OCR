@@ -5,7 +5,7 @@ import cv2
 def find_text(filename):
     img = cv2.imread(filename, 0)
     ret, gray = cv2.threshold(img, 190, 255, cv2.THRESH_BINARY)
-    text = pytesseract.image_to_string(gray, lang="pol+eng")
+    text = pytesseract.image_to_string(gray, lang="ind+eng")
     text = text.split("\n")
     r_text = []
     for line in text:
