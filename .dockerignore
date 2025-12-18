@@ -1,0 +1,14 @@
+.git
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
+.env
+.venv
+logic_notebook.ipynb
+static/uploads
+extracted_text.docx
+extracted_text.pdf
+extracted_text.txt
