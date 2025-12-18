@@ -56,7 +56,7 @@ def save_file():
       for text in texts:
         document.add_paragraph(text.replace("\n", ""))
       document.save('extracted_text.docx')
-      return send_file("extracted_text.docx",as_attachment=True, cache_timeout=0)
+      return send_file("extracted_text.docx", as_attachment=True, max_age=0)
 
     elif option == "pdf":
       texts = "\n".join(texts)
@@ -67,13 +67,13 @@ def save_file():
       for text in texts.split("\n"):
         pdf.cell(0, 8, text.encode('utf-8').decode('latin-1'), 0, 1)
       pdf.output('extracted_text.pdf', 'F')
-      return send_file("extracted_text.pdf",as_attachment=True, cache_timeout=0)
+      return send_file("extracted_text.pdf", as_attachment=True, max_age=0)
 
     elif option == "txt":
       with open("extracted_text.txt", "w") as f:
         for text in texts:
           f.write(text.replace("\n", ""))
-      return send_file("extracted_text.txt",as_attachment=True, cache_timeout=0)
+      return send_file("extracted_text.txt", as_attachment=True, max_age=0)
 
     return ""
 
