@@ -1,6 +1,16 @@
-Flask==3.0.0
-python-docx==1.1.2
-fpdf==1.7.2
-pytesseract==0.3.13
-opencv-python==4.10.0.84
-numpy==1.26.4
+Flask
+python-docx
+fpdf
+pytesseract
+opencv-python
+numpy
+Flask-SQLAlchemy
+Flask-Migrate
+python-dotenv
+Flask-Marshmallow
+marshmallow-sqlalchemy
+# Driver Database (Gunakan psycopg2-binary untuk PostgreSQL, atau mysqlclient untuk MySQL)
+psycopg2-binary
+# WSGI Server untuk production
+gunicorn
+pytest
